@@ -29,14 +29,7 @@ function Render(props) {
       <div className='picDiv'>
         {props.nothingFound ? <h2>Nothing found, try another keyword</h2> : null}
         {props.isLoading ?
-          <div className="sk-chase">
-            <div className="sk-chase-dot"></div>
-            <div className="sk-chase-dot"></div>
-            <div className="sk-chase-dot"></div>
-            <div className="sk-chase-dot"></div>
-            <div className="sk-chase-dot"></div>
-            <div className="sk-chase-dot"></div>
-          </div>
+          <div class="spinner"></div>
           : props.pictures}
       </div>
       <div className='footer'>

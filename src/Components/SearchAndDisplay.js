@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { enterSearchText } from '../redux'
+
+import enterSearchText from '../Actions/index'
 import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
 import Render from './Render'
@@ -39,13 +40,11 @@ function SearchAndDisplay() {
       .then(setIsLoading(true))
       .then((response) => {
         setResult(response.data.results)
-        setTimeout(function () {
-          if (response.data.total === 0) {
-            setNothingFound(true)
-          }
-          setIsLoading(false)
-          setText('')
-        }, 1000)
+        if (response.data.total === 0) {
+          setNothingFound(true)
+        }
+        setIsLoading(false)
+        setText('')
       })
   }
 
