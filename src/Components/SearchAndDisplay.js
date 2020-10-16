@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
 import Render from './Render'
 
+
 function SearchAndDisplay() {
 
   const [text, setText] = useState('')
@@ -73,17 +74,15 @@ function SearchAndDisplay() {
       .then(setIsLoading(true))
       .then((response) => {
         setResult(response.data.results)
-        setTimeout(function () {
-          if (response.data.total === 0) {
-            setNothingFound(true)
-          }
-          setIsLoading(false)
-        }, 1000)
+        if (response.data.total === 0) {
+          setNothingFound(true)
+        }
+        setIsLoading(false)
       })
   }
 
   return (
-    <div>
+    <div>      
       <Render
         onSubmit={onSubmit}
         onChange={onChange}

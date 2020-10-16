@@ -1,8 +1,8 @@
 import React from 'react';
 import SearchAndDisplay from './/Components/SearchAndDisplay'
 import { Provider } from 'react-redux'
-import reducer from '../src/Reducers/index'
 import { createStore } from 'redux'
+import reducer from '../src/Reducers/index'
 
 const initialState = {
   searchText: []
@@ -18,7 +18,7 @@ function App() {
   return (
     <Provider store={store}>
       <div>
-        <SearchAndDisplay />        
+        <SearchAndDisplay />                  
       </div>
     </Provider>
   )

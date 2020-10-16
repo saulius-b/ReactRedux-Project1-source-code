@@ -29,7 +29,7 @@ function Render(props) {
       <div className='picDiv'>
         {props.nothingFound ? <h2>Nothing found, try another keyword</h2> : null}
         {props.isLoading ?
-          <div class="spinner"></div>
+          <div className="spinner"></div>
           : props.pictures}
       </div>
       <div className='footer'>
